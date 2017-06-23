@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+            <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+            <title>Seznam sporocil</title>
+    </head>
+
+<body>
+    <h1>Seznam vseh sporočil</h1>
+
+    <ul>
+    {% for item in seznam: %}
+
+        <li><a href="/sporocilo/{{ item.key.id() }}"> {{ item.ime|e + item.priimek|e}} </a> {% if item.nastanek != None %} *Datum objave:* {{ item.nastanek }} {% else %} {% endif %}</li>
+
+    {% endfor %}
+    </ul>
+<form>
+    <button formaction="/">Domov</button>
+</form>
+
+</body>
+</html>

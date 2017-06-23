@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+            <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+            <title>Posamezno sporočilo/rezervacija</title>
+    </head>
+
+    <body>
+            <h1>Podatki rezervacije</h1>
+
+        <p>ID rezervacije: {{ sporocilo.key.id() }}</p>
+        <p>Ime: {{ sporocilo.ime|e }}</p>
+        <p>{% if sporocilo.priimek %} Priimek: {{ sporocilo.priimek|e }} {% else %} Priimek: Oseba ni pustila tega podatka {% endif %} </p>
+        <p>{% if sporocilo.email %} Email: {{ sporocilo.email|e }} {% else %} Email: Oseba ni pustila tega podatka {% endif %}</p>
+        <p>Sporočilo: {{ sporocilo.sporocilo|e }}</p>
+
+
+
+<form>
+    <button formaction="/">Domov</button>
+    <button formaction="/seznam">Nazaj</button>
+</form>
+    </body>
+</html>
